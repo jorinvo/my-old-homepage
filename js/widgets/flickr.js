@@ -13,8 +13,17 @@ define([
 
 
       this.collection.on('all', function () {
-        jorin.templates.render( 'photos', this.toJSON().splice(0, 7) );
+        jorin.templates.render( 'photos', this.toJSON().splice(0, 6) );
       });
+    },
+
+    events: {
+      'click img': 'showImage',
+    },
+
+    showImage: function(e) {
+      e.preventDefault();
+      log($(e.target).attr('data-photo'));
     }
 
   });
@@ -31,10 +40,13 @@ define([
           _.each(res.items, _.bind( function (item) {
             this.add( new Photo({
               name: item.title,
-              url: item.link,
+              url: item.title.split(' ').join('-').toLowerCase(),
+              link: item.link,
+              //date needed?
               date: item.published,
               photo: item.media.m.match( /.+(?=m.jpg)/ )[0]
             }) );
+            log(item.title.split(' ').join('-').toLowerCase());
           }, this) );
         }, this)
       });

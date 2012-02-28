@@ -1,5 +1,5 @@
-define([ 
-  'jquery', 
+define([
+  'jquery',
   'backbone',
   'views/home',
   'views/work'
@@ -12,12 +12,15 @@ define([
     initialize: function(opt) {
       this.home = new Home();
       this.work = new Work();
+
+      $('header').addClass('header-load');
+      $('.connect').addClass('connect-load');
     },
 
     events: {
       'click .link': 'openPage'
     },
-    
+
     openPage: function (e) {
       e.preventDefault();
       jorin.router.navigate( $(e.target).attr('href'), {trigger: true} );

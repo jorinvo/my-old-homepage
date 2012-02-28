@@ -14,8 +14,8 @@ require.config( {
 require(
   ['jquery', 'jorin', 'libs/log'],
   function( $, jorin ) {
-      $(function(){        
+      // $(function(){
         jorin.init();
-      });
+      // });
   }
 );

@@ -47,3 +47,13 @@
 .hacel() {
   .transform(translate3d(0,0,0));
 }
+
+.user-select(@arg: none) {
+  -webkit-touch-callout: @arg;
+  -webkit-user-select: @arg;
+  -khtml-user-select: @arg;
+  -moz-user-select: @arg;
+  -ms-user-select: @arg;
+  -o-user-select: @arg;
+  user-select: @arg;
+}

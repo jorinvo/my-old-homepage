@@ -26,7 +26,8 @@
 
 <div id="container">
 	<header>
-		<a href="/">
+		<a href="/" class="logo-link">
+			<span class="name-is">my name is:</span>
 			<img src="img/logo.png" alt="jorin" class="logo link">
 		</a>
 		<nav>
@@ -91,26 +92,9 @@
 				</ul>
 			</div>
 
-			<div class="widget">
-				<span class="connect-span">connect:</span>
-				<a href="https://twitter.com/jorin_vogel" target="_blank">
-					<div class="connect-twitter connect-link"></div>
-				</a>
-				<a href="https://facebook.com/jorin-vogel" target="_blank">
-					<div class="connect-facebook connect-link"></div>
-				</a>
-				<a href="https://github.com/jorin-vogel/" target="_blank">
-					<div class="connect-github connect-link"></div>
-				</a>
-				<a href="/contact" id="contactLink" target="_blank">
-					<div class="connect-mail connect-link"></div>
-				</a>
-				<div class="clear"></div>
-			</div>
-
 		</div> <!-- End .left -->
 
-		<div class="left">
+		<div class="right">
 
 			<div id="frontpage-posts" class="template">
 				<div class="widget frontpage-post">
@@ -121,10 +105,15 @@
 				</div>
 			</div>
 
-			<div id="photos" class="widget template">
-				<a href="photos/{{url}}">
-					<img src="{{photo}}s.jpg" alt="">
+			<div class="widget">
+				<a href="http://www.flickr.com/photos/61961241@N07/" target="_blank" class="no-deco">
+					<h2>flickr.com</h2>
 				</a>
+				<div id="photos" class="photos template">
+					<a href="#">
+						<img src="{{photo}}s.jpg" alt="" class="photo" data-photo="{{photo}}">
+					</a>
+				</div>
 			</div>
 		</div>  <!-- End .left -->
 
@@ -141,6 +130,25 @@
 	<section id="labs" class="labs">
 		Labs
 	</section>
+
+
+	<div class="connect">
+		<span class="connect-span">connect:</span>
+		<a href="https://twitter.com/jorin_vogel" target="_blank">
+			<img src="img/icons/twitter.png" alt="" class="connect-link">
+		</a>
+		<a href="https://facebook.com/jorin-vogel" target="_blank">
+			<img src="img/icons/facebook.png" alt="" class="connect-link">
+		</a>
+		<a href="https://github.com/jorin-vogel/" target="_blank">
+			<img src="img/icons/github.png" alt="" class="connect-link">
+		</a>
+		<a href="mailto:jorin.vogel@gmail.com" id="contactLink" target="_blank">
+			<img src="img/icons/mail.png" alt="" class="connect-link">
+		</a>
+		<div class="clear"></div>
+	</div>
+
 
 </div> <!-- end #container -->
 
