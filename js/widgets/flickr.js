@@ -13,6 +13,7 @@ define([
 
 
       this.collection.on('all', function () {
+        log(this);
         jorin.templates.render( 'photos', this.toJSON().splice(0, 6) );
       });
     },
@@ -23,7 +24,9 @@ define([
 
     showImage: function(e) {
       e.preventDefault();
-      log($(e.target).attr('data-photo'));
+      log(this);
+      // $(e.target).attr('data-photo')
+      // jorin.router.navigate('')
     }
 
   });
@@ -46,7 +49,6 @@ define([
               date: item.published,
               photo: item.media.m.match( /.+(?=m.jpg)/ )[0]
             }) );
-            log(item.title.split(' ').join('-').toLowerCase());
           }, this) );
         }, this)
       });
