@@ -13,7 +13,7 @@ define([
 
 
       this.collection.on('all', function () {
-        jorin.templates.render( 'repos', this.toJSON() );
+        jorin.templates.render( 'repos', this.toJSON().splice(0, 3) );
       });
     }
 
@@ -38,8 +38,12 @@ define([
       );
     },
 
-    comparator: function(el) {
-      return el.get('date');
+    comparator: function(repo) {
+       return String.fromCharCode.apply(String,
+        _.map(repo.get('date').split(''), function (c) {
+            return 0xffff - c.charCodeAt();
+        })
+    );
     }
 
   });

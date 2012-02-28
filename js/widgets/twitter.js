@@ -26,7 +26,7 @@ define([
       $.getJSON(
         'http://api.twitter.com/1/statuses/user_timeline.json?'+
         'screen_name=jorin_vogel'+
-        '&count=2'+
+        '&count=3'+
         '&trim_user=true'+
         '&callback=?'
         , $.proxy(function (data) {
@@ -48,7 +48,7 @@ define([
         , function(url) {
           return '<a href="'+url+'">'+url+'</a>';
         }).replace(/\B@[_a-z0-9]+/ig, function(reply) {
-            return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+            return  '<a href="http://twitter.com/'+reply+'">'+reply+'</a>';
         });
       this.set('tweet', tweet );
     }

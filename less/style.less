@@ -1,23 +1,54 @@
-@import "normalize";
-@import "media-queries";
-@import "helpers";
+@import "normalize.less";
+@import "media-queries.less";
+@import "helpers.less";
 
-@import "page";
-@import "home";
-@import "work";
+@import "page.less";
+@import "home.less";
+@import "work.less";
+
+
+body {
+  font-family: 'Exo', sans-serif;
+}
 
 a {
 	text-decoration: none;
+  font-weight: 700;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover, &:visited:hover {
+    color: #3CFC4E;
+  }
+
+}
+
+img {
+  .border-radius(2px);
 }
 
 ul {
 	list-style: none;
+  font-size: 14px;
+  padding-left: 25px;
 }
-	
-.left {
-	float: left;
+
+li {
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 0;
 }
 
 .clear {
 	clear: both;
+}
+
+.no-deco {
+  text-decoration: none;
 }

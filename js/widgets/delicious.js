@@ -23,7 +23,6 @@ define([
   var Bookmarks = Backbone.Collection.extend({
 
     initialize: function() {
-      log('repos');
       $.getJSON(
         'http://feeds.delicious.com/v2/json/jorin?count=3&callback=?'
         , $.proxy(function (data) {
@@ -37,11 +36,9 @@ define([
           }, this) );
         }, this)
       );
-    },
-
-    comparator: function(el) {
-      return el.get('date');
     }
+
+
 
   });
 

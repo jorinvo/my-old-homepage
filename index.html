@@ -10,14 +10,14 @@
 
 	<meta name="viewport" content="width=device-width">
 
-	<link rel="stylesheet/less" href="less/style.less">
+<!-- 	<link rel="stylesheet/less" href="less/style.less">
 	<script src="js/libs/less-1.2.1.min.js"></script>
+ -->
 
-	<!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
-	to style.css, and replace the 2 lines above by this one:
+	<link rel="stylesheet" href="less/style.css">
 
-	<link rel="stylesheet/less" href="less/style.css">
-	 -->
+
+	<link href='http://fonts.googleapis.com/css?family=Exo:400' rel='stylesheet' type='text/css'>
 
 	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
@@ -25,27 +25,22 @@
 
 
 <div id="container">
-
 	<header>
 		<a href="/">
-			<div class="logo link">
-				Jorin
-			</div>
+			<img src="img/logo.png" alt="jorin" class="logo link">
 		</a>
 		<nav>
-			<a href="work"class="link">
+			<a href="work"class="menu-link no-deco link">
 				Work
 			</a>
-			<a href="blog"class="link">
+			<a href="blog"class="menu-link no-deco link">
 				Blog
 			</a>
-			<a href="labs"class="link">
+			<a href="labs"class="menu-link no-deco link">
 				Labs
 			</a>
-			<a href="photos"class="link">
-				Photos
-			</a>
 		</nav>
+		<div class="clear"></div>
 	</header>
 	<section id="home" class="home">
 		<div class="left">
@@ -58,9 +53,9 @@
 				<div class="clear"></div>
 			</div>
 			<div class="widget">
-				<a href="https://twitter.com/jorin_vogel" target="_blank">
+				<a href="https://twitter.com/jorin_vogel" target="_blank" class="no-deco">
 					<h2>
-						@jorin_vogel
+						&#64;jorin_vogel
 					</h2>
 				</a>
 				<ul id="tweets" class="tweets template">
@@ -71,7 +66,7 @@
 			</div>
 
 			<div class="widget">
-				<a href="https://github.com/jorin-vogel/" target="_blank">
+				<a href="https://github.com/jorin-vogel/" target="_blank" class="no-deco">
 					<h2>github.com/jorin-vogel</h2>
 				</a>
 				<ul id="repos" class="repos template">
@@ -84,12 +79,11 @@
 			</div>
 
 			<div class="widget">
-				<a href="http://www.delicious.com/jorin" target="_blank">
+				<a href="http://www.delicious.com/jorin" target="_blank" class="no-deco">
 					<h2>delicious.com/jorin</h2>
 				</a>
 				<ul id="bookmarks" class="bookmarks template">
-					<img src="http://www.google.com/s2/u/0/favicons?domain={{img}}" alt="favicon">
-					<li class="bookmark">
+					<li class="bookmark" style="list-style-image: url(http://www.google.com/s2/u/0/favicons?domain={{img}})">
 						<a href="{{url}}" target="_blank">
 							{{name}}
 						</a>
@@ -127,9 +121,9 @@
 				</div>
 			</div>
 
-			<div id="images" class="widget template">
-				<a href="photos/{{link}}">
-					<img src="{{image}}" alt="">
+			<div id="photos" class="widget template">
+				<a href="photos/{{url}}">
+					<img src="{{photo}}s.jpg" alt="">
 				</a>
 			</div>
 		</div>  <!-- End .left -->
@@ -146,10 +140,6 @@
 
 	<section id="labs" class="labs">
 		Labs
-	</section>
-
-	<section id="photos" class="photos">
-		Photos
 	</section>
 
 </div> <!-- end #container -->

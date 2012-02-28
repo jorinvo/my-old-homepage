@@ -32,7 +32,6 @@ define(['jquery', 'underscore', 'hogan'], function ($, _, hogan) {
 				,	temp = {};
 
 			temp[selector] = data;
-			log(temp);
 			cache.el.html( cache.temp.render(temp) );
 
 		}

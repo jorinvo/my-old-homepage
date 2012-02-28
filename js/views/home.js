@@ -3,8 +3,9 @@ define([
   'backbone',
   'widgets/twitter',
   'widgets/github',
-  'widgets/delicious'
-], function($, Backbone, Twitter, Github, Delicious) {
+  'widgets/delicious',
+  'widgets/flickr'
+], function($, Backbone, Twitter, Github, Delicious, Flickr) {
 
   var Page = Backbone.View.extend({
 
@@ -15,6 +16,7 @@ define([
       this.twitter = new Twitter();
       this.github = new Github();
       this.github = new Delicious();
+      this.github = new Flickr();
 
     },
 
