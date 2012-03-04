@@ -25,7 +25,7 @@ define([
     initialize: function() {
       $.getJSON(
         'http://feeds.delicious.com/v2/json/jorin?count=3&callback=?'
-        , $.proxy(function (data) {
+        , _.bind(function (data) {
           _.each(data, _.bind( function (el) {
             this.add( new Bookmark({
               name: el.d,

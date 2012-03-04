@@ -29,7 +29,7 @@ define([
         '&count=3'+
         '&trim_user=true'+
         '&callback=?'
-        , $.proxy(function (data) {
+        , _.bind(function (data) {
           _.each(data, _.bind( function (el) {
             this.add( new Tweet({ tweet: el.text }) );
           }, this) );

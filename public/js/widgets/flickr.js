@@ -13,7 +13,7 @@ define([
 
 
       this.collection.on('all', function () {
-        log(this);
+        // log(this);
         jorin.templates.render( 'photos', this.toJSON().splice(0, 6) );
       });
     },
@@ -24,7 +24,7 @@ define([
 
     showImage: function(e) {
       e.preventDefault();
-      log(this);
+      // log(this);
       // $(e.target).attr('data-photo')
       // jorin.router.navigate('')
     }
@@ -39,7 +39,7 @@ define([
         url: 'http://api.flickr.com/services/feeds/photos_public.gne?format=json&id=61961241@N07',
         dataType: 'jsonp',
         jsonpCallback: 'jsonFlickrFeed',
-        success: $.proxy(function (res) {
+        success: _.bind(function (res) {
           _.each(res.items, _.bind( function (item) {
             this.add( new Photo({
               name: item.title,

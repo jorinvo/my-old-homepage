@@ -1,0 +1,79 @@
+<section id="about" class="about">
+
+  <div class="left">
+    <div class="widget">
+      <img src="http://www.gravatar.com/avatar/8c516fc0613f535f43ae4d25e72514db?s=100" alt="photo of me" class="profile">
+      <p class="intro">
+        I live in <span class="stuggi">Stuttgart</span>.
+        I like Blahblahbla and Blubbing around!
+      </p>
+      <div class="clear"></div>
+    </div>
+
+    <div class="widget">
+      <a href="https://github.com/jorin-vogel/" target="_blank" class="no-deco">
+        <h2>github.com/jorin-vogel</h2>
+      </a>
+      <ul id="repos" class="repos template">
+        <li class="repo">
+          <a href="{{url}}" target="_blank" class="tipsy-parent">
+            <span class="repo-name">
+              {{name}}
+            </span>
+            <div class="tipsy tipsy-w">
+              <div class="tipsy-arrow tipsy-arrow-w"></div>
+              <span class="tipsy-inner">
+                {{description}}
+              </span>
+            </div>
+          </a>
+          <div class="clear"></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <a href="http://www.delicious.com/jorin" target="_blank" class="no-deco">
+        <h2>delicious.com/jorin</h2>
+      </a>
+      <ul id="bookmarks" class="bookmarks template">
+        <li class="bookmark" style="list-style-image: url(http://www.google.com/s2/u/0/favicons?domain={{img}})">
+          <a href="{{url}}" target="_blank">
+            {{name}}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div> <!-- End .left -->
+
+  <div class="right">
+
+    <div class="widget">
+      <a href="https://twitter.com/jorin_vogel" target="_blank" class="no-deco">
+        <h2>
+          &#64;jorin_vogel
+        </h2>
+      </a>
+      <ul id="tweets" class="tweets template">
+        <li class="tweet">
+          {{{tweet}}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="widget">
+      <a href="http://www.flickr.com/photos/61961241@N07/" target="_blank" class="no-deco">
+        <h2>flickr.com</h2>
+      </a>
+      <div id="photos" class="photos template">
+        <a href="#">
+          <img src="{{photo}}s.jpg" alt="" class="photo" data-photo="{{photo}}">
+        </a>
+      </div>
+    </div>
+
+  </div>  <!-- End .left -->
+
+
+</section>

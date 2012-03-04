@@ -9,7 +9,7 @@ define([
 
   var Page = Backbone.View.extend({
 
-    el: '#home',
+    el: '#about',
 
     initialize: function () {
 
@@ -21,11 +21,11 @@ define([
     },
 
     activate: function () {
-      this.$el.fadeIn();
+      this.$el.show();
     },
 
     deactivate: function () {
-      this.$el.fadeOut();
+      this.$el.hide();
     }
 
   });

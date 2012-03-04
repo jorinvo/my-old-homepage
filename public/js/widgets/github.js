@@ -25,7 +25,7 @@ define([
     initialize: function() {
       $.getJSON(
         'https://api.github.com/users/jorin-vogel/repos?callback=?'
-        , $.proxy(function (res) {
+        , _.bind(function (res) {
           _.each(res.data, _.bind( function (el) {
             this.add( new Repo({
               name: el.name,

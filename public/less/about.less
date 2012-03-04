@@ -1,4 +1,4 @@
-.home {
+.about {
 	padding-top: 100px;
 }
 
@@ -29,8 +29,22 @@
 	list-style-image: url(https://twitter.com/favicon.ico);
 }
 
+.repos {
+  padding-left: 3px;
+}
+
 .repo {
-	list-style-image: url(https://github.com/favicon.ico);
+	background: url(https://github.com/favicon.ico) no-repeat;
+  padding-left: 21px;
+}
+
+.repo-name {
+  float:left;
+}
+
+.tipsy {
+  margin-left: 7px;
+  float: left;
 }
 
 .photos {
@@ -38,9 +52,10 @@
 }
 
 .photo {
+  //remove as soon as photo gallery is implemented
+  cursor: default;
 	margin: 3px 1px;
-	border: 1px solid white;
 	&:hover {
-		border: 1px solid black;
+    .box-shadow(0 0 5px black);
 	}
 }

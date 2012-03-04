@@ -9,12 +9,12 @@ define(['jquery', 'underscore', 'hogan'], function ($, _, hogan) {
 
 		compile: function () {
 
-			$('.template').each( $.proxy(function (i, el) {
+			$('.template').each( _.bind(function (i, el) {
 				var $el = $(el)
 					,	id = el.id;
 				this.cache[id] = {
 					el: $el,
-					//Or can I use 'DomEl.outerHTML here?'
+					//Or can I use 'DomEl.outerHTML' here?
 					temp: hogan.compile(
 						'{{#' + id + '}}'
 						+ $el.html()

@@ -1,5 +1,5 @@
-define([ 
-  'jquery', 
+define([
+  'jquery',
   'backbone'
 ], function($, Backbone) {
 
@@ -8,13 +8,13 @@ define([
     el: '#work',
 
     activate: function () {
-      this.$el.fadeIn();
+      this.$el.show();
     },
 
     deactivate: function () {
-      this.$el.fadeOut();
+      this.$el.hide();
     }
-    
+
   });
 
 
