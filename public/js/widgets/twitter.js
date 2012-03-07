@@ -1,19 +1,28 @@
 define([
   'jquery',
-  'backbone'
-], function($, Backbone) {
+  'backbone',
+  'hogan',
+  'text!temp/widgets/twitter.html'
+], function($, Backbone, hogan, twitterTemp) {
 
 
   var Twitter = Backbone.View.extend({
 
-    el: '#tweets',
-
     initialize: function (opt) {
-      this.collection = new Tweets();
 
-      this.collection.on('all', function () {
-        jorin.templates.render( 'tweets', this.toJSON() );
-      });
+      this.setElement(opt.parent.$('#tweets'));
+
+      this.temp = hogan.compile(twitterTemp);
+
+      this.tweets = new Tweets();
+
+      this.tweets.on('ready', function () {
+        this.render({ tweets: this.tweets.toJSON() });
+      }, this);
+    },
+
+    render: function(data) {
+      this.$el.html( this.temp.render(data) );
     }
 
   });
@@ -33,6 +42,9 @@ define([
           _.each(data, _.bind( function (el) {
             this.add( new Tweet({ tweet: el.text }) );
           }, this) );
+
+          this.trigger('ready');
+
         }, this)
       );
     }

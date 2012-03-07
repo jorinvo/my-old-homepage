@@ -12,6 +12,7 @@ define([
       'blog': 'blog',
       'labs': 'labs',
       'blog/:post': 'post',
+      '404': 'deadLink',
       '*path': 'notFound'
     },
 
@@ -30,12 +31,22 @@ define([
       jorin.page.open('blog');
     },
 
+    labs: function(){
+      jorin.title('Labs');
+      jorin.page.open('labs');
+    },
+
     post: function(post){
       jorin.page.openPost(post);
     },
 
+    deadLink: function() {
+      jorin.title('404 - not found!');
+      jorin.page.open('deadLink');
+    },
+
     notFound: function () {
-      this.navigate('', {trigger: true});
+      this.navigate('404', {trigger: true});
     }
 
   });

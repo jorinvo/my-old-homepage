@@ -1,0 +1,99 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet/less" href="css/style.less">
+  <script type="text/javascript" src="js/libs/less-1.2.1.js"></script>
+
+
+	<link href='http://fonts.googleapis.com/css?family=Exo:400' rel='stylesheet' type='text/css'>
+
+	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+<body>
+
+
+<div id="container">
+
+	<header>
+
+		<a href="about" class="logo-link link">
+			<span class="name-is">my name is:</span>
+			<img src="img/logo.png" alt="jorin" class="logo">
+		</a>
+
+		<img src="img/bird.png" alt="" class="bird-header">
+
+		<nav>
+			<a href="about"class="menu-link no-deco link">
+				About
+			</a>
+			<a href="work"class="menu-link no-deco link">
+				Work
+			</a>
+			<a href="blog"class="menu-link no-deco link">
+				Blog
+			</a>
+			<a href="labs"class="menu-link no-deco link">
+				Labs
+			</a>
+		</nav>
+
+	  <a href="http://jorinvogel.tumblr.com/rss" target="_blank">
+	    <div class="rss"></div>
+  	</a>
+
+		<div class="clear"></div>
+
+	</header>
+
+
+	<%- partial('work.html') %>
+	<%- partial('labs.html') %>
+  <section id="posts-container"></section>
+	<%- partial('deadLink.html') %>
+
+
+	<div class="connect">
+		<span class="connect-span">connect:</span>
+		<a href="https://twitter.com/jorin_vogel" target="_blank">
+			<img src="img/icons/twitter.png" alt="" class="connect-link">
+		</a>
+		<a href="https://facebook.com/jorin-vogel" target="_blank">
+			<img src="img/icons/facebook.png" alt="" class="connect-link">
+		</a>
+		<a href="https://github.com/jorin-vogel/" target="_blank">
+			<img src="img/icons/github.png" alt="" class="connect-link">
+		</a>
+		<a href="mailto:jorin.vogel@gmail.com" id="contactLink" target="_blank">
+			<img src="img/icons/mail.png" alt="" class="connect-link">
+		</a>
+		<div class="clear"></div>
+	</div>
+
+
+</div> <!-- end #container -->
+
+
+
+<script data-main="js/main" src="js/libs/require/require.js"></script>
+
+
+
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>

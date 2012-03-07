@@ -3,7 +3,7 @@ define([
   'backbone'
 ], function($, Backbone) {
 
-  var Page = Backbone.View.extend({
+  var Work = Backbone.View.extend({
 
     el: '#work',
 
@@ -18,6 +18,6 @@ define([
   });
 
 
-  return Page;
+  return Work;
 
 });

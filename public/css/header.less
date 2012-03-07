@@ -1,0 +1,75 @@
+.header-load {
+  margin-top: 0;
+}
+
+header {
+  //prop changes on init
+  margin-top: -100px;
+  z-index: 99;
+  border-bottom: 1px solid grey;
+  font-family: 'Exo', sans-serif;
+  position: fixed;
+  width: 960px;
+  background: white;
+  padding: 15px 0 5px 6px;
+  .box-shadow( 0 20px 40px white);
+  .user-select();
+  .transition(0.5s, margin);
+}
+
+.name-is {
+  float: left;
+  margin: 18px 11px 0 0;
+  font-size: 12px;
+  opacity: 0.4;
+  .transition();
+}
+
+.logo-link:hover .name-is{
+  opacity: 1;
+  color: black;
+}
+
+.logo {
+  color: black;
+  font-size: 40px;
+  float: left;
+}
+
+.bird-header {
+  position: fixed;
+  margin-top: 2px;
+  margin-left: 20px;
+}
+
+nav {
+  margin-top: 15px;
+  margin-left: 257px;
+  float: left;
+}
+
+.menu-link {
+  margin: 5px;
+  padding: 7px 13px;
+  &:hover, &:focus {
+    text-decoration: underline !important;
+    color: black;
+  }
+}
+
+.active-page {
+  color: @green;
+  &:hover, &:focus {
+    color: @green;
+  }
+}
+
+
+.rss {
+  background: url(/img/icons/rss.png);
+  width: 21px;
+  height: 21px;
+  margin-left: 207px;
+  margin-top: 14px;
+  float: left;
+}

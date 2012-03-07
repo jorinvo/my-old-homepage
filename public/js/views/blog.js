@@ -1,21 +1,33 @@
 define([
   'jquery',
   'backbone',
-  'collections/posts'
-], function($, Backbone, Posts) {
+  'hogan',
+  'text!temp/blog.html'
+], function($, Backbone, hogan, blogTemp) {
 
   var Blog = Backbone.View.extend({
 
-    el: '#blog',
+    tagName: 'section',
+    id: 'blog',
+    className: 'blog',
 
     initialize: function() {
 
-      this.collection = new Posts();
+      this.temp = hogan.compile(blogTemp);
 
-      this.collection.on('all', function () {
-        jorin.templates.render( 'posts', this.toJSON() );
-      });
+      this.posts = jorin.posts;
+      this.posts.fetchPosts();
 
+
+      this.posts.on('ready', function () {
+        this.render({ posts: this.posts.toJSON() });
+      }, this);
+
+    },
+
+    render: function(data) {
+      this.$el.html( this.temp.render(data) );
+      log(this.el);
     },
 
     activate: function () {

@@ -1,43 +1,83 @@
 define([
   'jquery',
-  'backbone',
-  'models/post'
-], function($, Backbone, Post) {
+  'backbone'
+], function($, Backbone) {
 
+  var Post = Backbone.Model.extend();
 
   var Posts = Backbone.Collection.extend({
 
     initialize: function() {
+    },
+
+    fetch: function(id, cb) {
 
       $.getJSON(
         'http://api.tumblr.com/v2/blog/jorinvogel.tumblr.com/'
-        + 'posts?api_key=hEEn5blpQrSOx5XGgJp6L1vbsQUpM7aAIxvHmpdoxkDYQoI2q4&jsonp=?'
+        + 'posts?api_key=hEEn5blpQrSOx5XGgJp6L1vbsQUpM7aAIxvHmpdoxkDYQoI2q4'
+        + ( id? '&id=' + id : '' )
+        + '&jsonp=?'
         , _.bind(function (data) {
-          _.each(data.response.posts, _.bind( function (el) {
+          if ( data.meta.status === 404 ) {
+            alert('404');
+          } else {
+            _.each(data.response.posts, _.bind( function (el) {
 
-            var url = el.tags[0]
-              .match(/[a-zA-Z0-9 ]/g)
-              .join('')
-              .split(' ')
-              .join('-')
-              .toLowerCase();
+              var id = el.id.toString();
 
-            var photo = _.find(el.photos[0].alt_sizes, function(img) {
+              if ( this.get(id) ) return;
+
+              var photos = el.photos[0].alt_sizes;
+
+              var photo = _.find(photos, function(img) {
                 return img.width === 250;
-            });
+              });
 
-            this.add( new Post({
-              title: el.tags[0],
-              url: url,
-              body: el.caption,
-              date: el.date,
-              photo: photo
-            }) );
+              var thumbnail = _.find(photos, function(img) {
+                return img.width === 100;
+              });
+              this.add( new Post({
+                title: el.tags[0],
+                id: id,
+                body: el.caption,
+                date: el.date,
+                photo: photo,
+                thumbnail: thumbnail
+              }) );
 
-          }, this) );
-        }, this)
+            }, this) ); //END each
+
+            cb();
+
+          } //END else
+        }, this) //END callback
       );
 
+      return this;
+    },
+
+    fetchPost: function(id, cb) {
+      this.fetch(id, _.bind(function() {
+        this.get(id).trigger('showMe');
+      }, this) );
+
+      return this;
+    },
+
+    fetchPosts: function() {
+      this.fetch(null, _.bind(function() {
+        this.trigger('ready');
+      }, this) );
+
+      return this;
+    },
+
+    comparator: function(post) {
+      return String.fromCharCode.apply(String,
+        _.map(post.get('date').split(''), function (c) {
+          return 0xffff - c.charCodeAt();
+        })
+      );
     }
 
   });

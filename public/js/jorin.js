@@ -1,33 +1,27 @@
 define([
-  'jquery',
+  'underscore',
   'router',
+  'utils/helpers',
   'utils/manager',
-  'utils/templates',
+  'collections/posts',
   'views/page'
-], function($, Router, Manager, Templates, Page) {
-  var jorin = {
+], function(_, Router, helpers, Manager, PostsCollection,Page) {
+  var jorin = _.extend(helpers, {
 
     init: function(){
 
-      this.templates = new Templates();
+      this.posts = new PostsCollection();
 
       this.page = new Page();
 
       this.manager = new Manager();
-      this.manager.add(this.page.about);
-      this.manager.add(this.page.work);
-      this.manager.add(this.page.blog);
-
-      this.title = function(title) {
-        document.title = 'Jorin - ' + title;
-      };
 
       this.router = new Router(this);
       Backbone.history.start();
 
     }
 
-  };
+  });
 
   //I am not happy with this global object,
   //but I had a problem when I tried to require this file

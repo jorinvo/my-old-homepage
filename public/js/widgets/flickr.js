@@ -1,21 +1,27 @@
 define([
   'jquery',
-  'backbone'
-], function($, Backbone) {
+  'backbone',
+  'hogan',
+  'text!temp/widgets/flickr.html'
+], function($, Backbone, hogan, flickrTemp) {
 
 
   var Flickr = Backbone.View.extend({
 
-    el: '#photos',
-
     initialize: function (opt) {
-      this.collection = new Photos();
 
+      this.setElement(opt.parent.$('#photos'));
 
-      this.collection.on('all', function () {
-        // log(this);
-        jorin.templates.render( 'photos', this.toJSON().splice(0, 6) );
-      });
+      this.temp = hogan.compile(flickrTemp);
+      this.photos = new Photos();
+
+      this.photos.on('ready', function () {
+        this.render({ photos: this.photos.toJSON().splice(0, 6) });
+      }, this);
+    },
+
+    render: function(data) {
+      this.$el.html( this.temp.render(data) );
     },
 
     events: {
@@ -50,6 +56,9 @@ define([
               photo: item.media.m.match( /.+(?=m.jpg)/ )[0]
             }) );
           }, this) );
+
+          this.trigger('ready');
+
         }, this)
       });
     }

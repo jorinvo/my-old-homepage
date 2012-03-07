@@ -1,0 +1,15 @@
+<div id="blogOverview" class="blog-overview">
+
+  <div id="posts" class="posts">
+    {{#posts}}
+      <a href="#blog/{{id}}" class="post-link">
+        <div class="thumbnail" style="
+          background: url({{photo.url}});
+          height: {{photo.height}}px;
+        ">
+          <span class="caption">{{title}}</span>
+        </div>
+      </a>
+    {{/posts}}
+  </div>
+</div>

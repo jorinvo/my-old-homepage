@@ -1,20 +1,28 @@
 define([
   'jquery',
-  'backbone'
-], function($, Backbone) {
+  'backbone',
+  'hogan',
+  'text!temp/widgets/github.html'
+], function($, Backbone, hogan, githubTemp) {
 
 
   var Github = Backbone.View.extend({
 
-    el: '#repos',
-
     initialize: function (opt) {
-      this.collection = new Repos();
 
+      this.setElement(opt.parent.$('#repos'));
 
-      this.collection.on('all', function () {
-        jorin.templates.render( 'repos', this.toJSON().splice(0, 3) );
-      });
+      this.temp = hogan.compile(githubTemp);
+
+      this.repos = new Repos();
+
+      this.repos.on('ready', function () {
+        this.render({ repos: this.repos.toJSON().splice(0, 3) });
+      }, this);
+    },
+
+    render: function(data) {
+      this.$el.html( this.temp.render(data) );
     }
 
   });
@@ -34,16 +42,19 @@ define([
               date: el.updated_at
             }) );
           }, this) );
+
+          this.trigger('ready');
+
         }, this)
       );
     },
 
     comparator: function(repo) {
-       return String.fromCharCode.apply(String,
+      return String.fromCharCode.apply(String,
         _.map(repo.get('date').split(''), function (c) {
-            return 0xffff - c.charCodeAt();
+          return 0xffff - c.charCodeAt();
         })
-    );
+      );
     }
 
   });
