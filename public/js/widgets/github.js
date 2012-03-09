@@ -23,6 +23,15 @@ define([
 
     render: function(data) {
       this.$el.html( this.temp.render(data) );
+      this.positionTooltip();
+    },
+
+    positionTooltip: function() {
+      $('.repo').each(function(i, el) {
+        var $el = $(el);
+        var left = $el.find('.repo-name').width();
+        $el.find('.tipsy').css({ 'margin-left': (left + 5) + 'px' });
+      });
     }
 
   });

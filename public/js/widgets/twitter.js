@@ -58,9 +58,9 @@ define([
       var tweet = opt.tweet.replace(
         /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
         , function(url) {
-          return '<a href="'+url+'">'+url+'</a>';
+          return '<a href="'+url+'" target="_blank">'+url+'</a>';
         }).replace(/\B@[_a-z0-9]+/ig, function(reply) {
-            return  '<a href="http://twitter.com/'+reply+'">'+reply+'</a>';
+            return  '<a href="http://twitter.com/'+reply+'" target="_blank">'+reply+'</a>';
         });
       this.set('tweet', tweet );
     }

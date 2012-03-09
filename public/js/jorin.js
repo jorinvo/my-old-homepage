@@ -17,8 +17,8 @@ define([
       this.manager = new Manager();
 
       this.router = new Router(this);
-      Backbone.history.start();
 
+      Backbone.history.start({pushState: true});
     }
 
   });

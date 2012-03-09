@@ -28,7 +28,13 @@ define([
     },
 
     events: {
+      'click .close-post': 'closePost',
       'click .tweet-post': 'tweetPost'
+    },
+
+    closePost: function(e) {
+      e.preventDefault();
+      jorin.router.navigate( $(e.currentTarget).attr('href'), {trigger: true} );
     },
 
     tweetPost: function() {

@@ -69,6 +69,7 @@ define([
     //This way is only necessary in IE7.
     //Otherwise I could use hashchange-event
     //because I can't support js-disabled anyway.
+    //it's also needed for push-state!
     openPage: function (e) {
       e.preventDefault();
       jorin.router.navigate( $(e.target).attr('href'), {trigger: true} );

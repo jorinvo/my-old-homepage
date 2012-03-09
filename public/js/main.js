@@ -9,7 +9,7 @@ require.config( {
     backbone: 'libs/backbone/backbone',
     hogan: 'libs/hogan/hogan'
   },
-  baseUrl: 'js'
+  baseUrl: '/js'
 } );
 
 require(

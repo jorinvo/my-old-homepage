@@ -27,7 +27,6 @@ define([
 
     render: function(data) {
       this.$el.html( this.temp.render(data) );
-      log(this.el);
     },
 
     activate: function () {
@@ -36,6 +35,15 @@ define([
 
     deactivate: function () {
       this.$el.hide();
+    },
+
+    events: {
+      'click .post-link': 'openPostLink'
+    },
+
+    openPostLink: function(e) {
+      e.preventDefault();
+      jorin.router.navigate( $(e.currentTarget).attr('href'), {trigger: true} );
     }
 
   });

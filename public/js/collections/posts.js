@@ -5,6 +5,7 @@ define([
 
   var Post = Backbone.Model.extend();
 
+
   var Posts = Backbone.Collection.extend({
 
     initialize: function() {
@@ -41,10 +42,10 @@ define([
                 id: id,
                 body: el.caption,
                 date: el.date,
+                displayDate: this.prettyDate(el.date),
                 photo: photo,
                 thumbnail: thumbnail
               }) );
-
             }, this) ); //END each
 
             cb();
@@ -78,6 +79,11 @@ define([
           return 0xffff - c.charCodeAt();
         })
       );
+    },
+
+    prettyDate: function(oldDate) {
+      var splitDate = oldDate.substring(0,10).split('-');
+      return [ splitDate[1] , splitDate[2] , splitDate[0] ].join('/');
     }
 
   });
