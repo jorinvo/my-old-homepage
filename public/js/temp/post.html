@@ -21,10 +21,21 @@
 
 <div class="tweet-post tipsy-parent">
   <div class="tipsy tipsy-e">
-  <div class="tipsy-arrow tipsy-arrow-e"></div>
-  <span class="tipsy-inner">
-    tweet it!
-  </span>
-</div>
+    <div class="tipsy-arrow tipsy-arrow-e"></div>
+    <span class="tipsy-inner">
+      tweet it!
+    </span>
+  </div>
 </div>
 <div class="clear"></div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_shortname = 'jorinvogel';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
