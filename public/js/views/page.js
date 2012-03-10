@@ -26,6 +26,9 @@ define([
 
 //router-methods
     open: function(page) {
+
+      _gaq.push([ '_trackPageview', '/' + page ]);
+
       this
         .activeLink(page)
         .loadView(page);
@@ -34,6 +37,8 @@ define([
     },
 
     openPost: function(post) {
+      _gaq.push([ '_trackPageview', '/blog/' + post ]);
+
       this
         .activeLink('blog')
         .loadView('postsView', _.bind(function() {

@@ -5,7 +5,7 @@ define([
   'utils/manager',
   'collections/posts',
   'views/page'
-], function(_, Router, helpers, Manager, PostsCollection,Page) {
+], function(_, Router, helpers, Manager, PostsCollection, Page) {
   var jorin = _.extend(helpers, {
 
     init: function(){
@@ -16,7 +16,7 @@ define([
 
       this.manager = new Manager();
 
-      this.router = new Router(this);
+      this.router = new Router();
 
       Backbone.history.start({pushState: true});
     }
