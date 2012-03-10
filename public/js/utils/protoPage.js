@@ -9,9 +9,10 @@ define([], function(){
     activate: function(i) {
       this.$el.removeClass(this.managerLast);
       if (i >= 0) {
-        if (i > this.managerIndex) { this.managerLast = 'bounceInRight'
-        } else {
+        if (i > this.managerIndex) {
           this.managerLast = 'bounceInLeft';
+        } else {
+          this.managerLast = 'bounceInRight';
         }
       } else {
         this.managerLast = 'bounceInDown';
