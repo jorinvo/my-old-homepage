@@ -25,14 +25,18 @@ define([
     },
 
     activate: function () {
-      this.$el.show();
+      this.$el
+        .removeClass('bounceOutUp')
+        .addClass('bounceInDown');
       jorin.keydown.on('keydown', function(e) {
         if (e.which === 27) jorin.router.navigate('blog', { trigger: true });
       });
     },
 
     deactivate: function () {
-      this.$el.hide();
+      this.$el
+        .removeClass('bounceInDown')
+        .addClass('bounceOutUp');
       jorin.keydown.off();
     },
 

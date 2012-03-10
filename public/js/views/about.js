@@ -8,11 +8,10 @@ define([
   'widgets/flickr'
 ], function($, Backbone, aboutTemp, Twitter, Github, Delicious, Flickr) {
 
-  var Page = Backbone.View.extend({
+  var Page = Backbone.View.extend(_.extend(jorin.protoPage, {
 
-    tagName: 'section',
     id: 'about',
-    className: 'about',
+    className: 'about animated bounceOutUp',
 
     initialize: function () {
 
@@ -25,19 +24,13 @@ define([
 
     },
 
-    activate: function () {
-      this.$el.show();
-    },
-
-    deactivate: function () {
-      this.$el.hide();
-    },
+    managerIndex: 0,
 
     render: function() {
       this.$el.html(aboutTemp);
     }
 
-  });
+  }));
 
 
   return Page;

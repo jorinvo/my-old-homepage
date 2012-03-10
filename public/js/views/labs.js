@@ -7,13 +7,11 @@ define([
 
     el: '#labs',
 
-    activate: function () {
-      this.$el.show();
+    initialize: function() {
+      this.$el.addClass('animate bounceOutUp');
     },
 
-    deactivate: function () {
-      this.$el.hide();
-    }
+    managerIndex: 3
 
   });
 

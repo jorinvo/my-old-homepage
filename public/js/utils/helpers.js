@@ -1,8 +1,9 @@
 define([
   'jquery',
   'underscore',
-  'backbone'
-], function($, _, Backbone) {
+  'backbone',
+  'utils/protoPage'
+], function($, _, Backbone, protoPage) {
 
   var helpers = {
 
@@ -27,8 +28,9 @@ define([
       link.rel = "stylesheet";
       link.href = url;
       document.getElementsByTagName("head")[0].appendChild(link);
-    }
+    },
 
+    protoPage: protoPage
 
   };
 

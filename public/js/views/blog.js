@@ -5,11 +5,10 @@ define([
   'text!temp/blog.html'
 ], function($, Backbone, hogan, blogTemp) {
 
-  var Blog = Backbone.View.extend({
+  var Blog = Backbone.View.extend(_.extend(jorin.protoPage, {
 
-    tagName: 'section',
     id: 'blog',
-    className: 'blog',
+    className: 'blog animated bounceOutUp',
 
     initialize: function() {
 
@@ -29,13 +28,7 @@ define([
       this.$el.html( this.temp.render(data) );
     },
 
-    activate: function () {
-      this.$el.show();
-    },
-
-    deactivate: function () {
-      this.$el.hide();
-    },
+    managerIndex: 2,
 
     events: {
       'click .post-link': 'openPostLink'
@@ -46,7 +39,7 @@ define([
       jorin.router.navigate( $(e.currentTarget).attr('href'), {trigger: true} );
     }
 
-  });
+  }));
 
 
   return Blog;

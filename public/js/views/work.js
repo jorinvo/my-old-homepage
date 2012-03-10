@@ -7,13 +7,12 @@ define([
 
     el: '#work',
 
-    activate: function () {
-      this.$el.show();
+    initialize: function() {
+      log(this.$el.addClass('animate bounceOutUp'));
     },
 
-    deactivate: function () {
-      this.$el.hide();
-    }
+    managerIndex: 1,
+
 
   });
 

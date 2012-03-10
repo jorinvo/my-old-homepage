@@ -50,7 +50,11 @@ define([
 
     activate: function() {
       jorin.title('Blog: ' + this.post.get('title'));
-      this.$el.addClass('active');
+      this.$el.addClass('block');
+    },
+
+    deactivate: function() {
+      this.$el.removeClass('block');
     }
   });
 
