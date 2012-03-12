@@ -1,0 +1,25 @@
+@import "utils/helpers.less";
+
+
+@green: #3CFC4E;
+
+
+body {
+  font-family: 'Exo', sans-serif;
+  padding: 0 20px;
+}
+
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover, &:visited:hover {
+    color: @green;
+  }
+}
