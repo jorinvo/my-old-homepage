@@ -36,7 +36,6 @@ app.get('/blog/:post', function(req, res) {
 });
 
 app.get('/comments/:comment', function(req, res) {
-  var comment = req.params.comment;
   res.render('comments.html');
 });
 
