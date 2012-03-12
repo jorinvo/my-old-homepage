@@ -21,8 +21,10 @@ app.configure(function() {
 var port = process.env.PORT || 3000;
 app.listen(port);
 app.get('/', function(req, res) {
-  var page = req.query.page || 'about';
-  res.render('index.html', { page: page });
+  if (req.query.page) var hash = true;
+  else var hash = false;
+  var page = req.query.page;
+  res.render('index.html', { page: page, hash: hash });
 });
 
 app.get('/:page', function(req, res) {

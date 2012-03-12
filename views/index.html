@@ -85,10 +85,11 @@
 
 
 <script data-main="js/main" src="js/libs/require/require.js"></script>
-<script>
-	window.location.hash = '<%= page %>';
-</script>
-
+<% if (hash) { %>
+	<script>
+		window.location.hash = '<%= page %>';
+	</script>
+<% } %>
 
 
 <script>

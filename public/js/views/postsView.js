@@ -19,15 +19,18 @@ define([
 
       this.manager = new Manager();
 
-      this.posts.each(_.bind(this.addView, this) );
-      this.posts.on('add', this.addView, this);
+      this.posts.on('renderPost', this.addView, this);
 
     },
 
     activate: function () {
       this.$el
-        .removeClass('bounceOutUp')
+        .removeClass('bounceOutUp hide')
         .addClass('bounceInDown');
+      //prevents back-button position: fixed from being broken
+      setTimeout(_.bind(function() {
+        this.$el.removeClass('bounceInDown');
+      }, this), 1500);
       jorin.keydown.on('keydown', function(e) {
         if (e.which === 27) jorin.router.navigate('blog', { trigger: true });
       });
@@ -37,6 +40,10 @@ define([
       this.$el
         .removeClass('bounceInDown')
         .addClass('bounceOutUp');
+      setTimeout(_.bind(function() {
+        this.$el.addClass('hide');
+      }, this), 1500);
+
       jorin.keydown.off();
     },
 
@@ -44,13 +51,19 @@ define([
       var postView = new PostView({ post: post });
       this.manager.add(postView);
       this.$el.append(postView.el);
+      post.set('hasView', true).trigger('showMe');
+
+      return this;
     },
 
     showPost: function(id) {
 
       var post = this.posts.get(id);
+
       if (!post) {
         this.posts.fetchPost(id);
+      } else if ( !post.get('hasView') ) {
+        this.addView(post);
       } else {
         post.trigger('showMe');
       }

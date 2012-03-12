@@ -5,6 +5,7 @@ define([
 
   PostView = Backbone.View.extend({
 
+    tagName: 'article',
     className: 'post',
 
     initialize: function(opt) {
@@ -39,7 +40,7 @@ define([
 
     tweetPost: function() {
 
-      var url = encodeURIComponent('http://jorin-vogel.com/#blog/' + this.post.id);
+      var url = encodeURIComponent('http://jorin-vogel.com/blog/' + this.post.id);
       window.open( 'http://twitter.com/intent/tweet?'
         + '&url=' + url
         + '&via=' + 'jorin_vogel'

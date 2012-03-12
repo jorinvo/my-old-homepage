@@ -3,7 +3,11 @@ define([
   'backbone'
 ], function($, Backbone) {
 
-  var Post = Backbone.Model.extend();
+  var Post = Backbone.Model.extend({
+    defaults: {
+      hasView: false
+    }
+  });
 
 
   var Posts = Backbone.Collection.extend({
@@ -28,15 +32,14 @@ define([
 
               if ( this.get(id) ) return;
 
-              var photos = el.photos[0].alt_sizes;
+              var photos = el.photos[0];
 
-              var photo = _.find(photos, function(img) {
+              var thumbnail = _.find(photos.alt_sizes, function(img) {
                 return img.width === 250;
               });
 
-              var thumbnail = _.find(photos, function(img) {
-                return img.width === 100;
-              });
+              var photo = photos.original_size;
+
               this.add( new Post({
                 title: el.tags[0],
                 encodedTitle: encodeURIComponent(el.tags[0]),
@@ -60,7 +63,9 @@ define([
 
     fetchPost: function(id, cb) {
       this.fetch(id, _.bind(function() {
-        this.get(id).trigger('showMe');
+        var post = this.get(id);
+        this.trigger('renderPost', post);
+        post.trigger('showMe');
       }, this) );
 
       return this;
