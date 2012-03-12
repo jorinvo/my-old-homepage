@@ -39,7 +39,7 @@ define([
               });
               this.add( new Post({
                 title: el.tags[0],
-                url: encodeURIComponent(el.tags[0]),
+                encodedTitle: encodeURIComponent(el.tags[0]),
                 id: id,
                 body: el.caption,
                 date: el.date,

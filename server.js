@@ -36,7 +36,8 @@ app.get('/blog/:post', function(req, res) {
 });
 
 app.get('/comments/:comment', function(req, res) {
-  res.render('comments.html');
+  var title = decodeURIComponent(res.query.title);
+  res.render('comments.html', { title: title });
 });
 
 console.log(
