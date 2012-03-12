@@ -82,3 +82,12 @@
   -o-animation-duration: @args;
   animation-duration: @args;
 }
+
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+.size(@val) {
+  .size(@val, @val);
+}

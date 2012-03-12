@@ -35,6 +35,11 @@ app.get('/blog/:post', function(req, res) {
   res.redirect('/?page='+ page);
 });
 
+app.get('/comments/:comment', function(req, res) {
+  var comment = req.params.comment;
+  res.render('comments.html');
+});
+
 console.log(
   "Express server listening on port %d in %s mode",
   app.address().port,
