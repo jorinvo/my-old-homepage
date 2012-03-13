@@ -21,12 +21,15 @@ header {
   float: left;
   margin: 18px 11px 0 0;
   font-size: 12px;
-  opacity: 0.4;
+  width: 66px;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 1;
   .transition();
+  .transition(width, 1.5s, ease);
 }
 
 .logo-link:hover .name-is{
-  opacity: 1;
   color: black;
 }
 
@@ -43,9 +46,9 @@ header {
 }
 
 nav {
-  margin-top: 15px;
-  margin-left: 257px;
-  float: left;
+  margin: 0 auto;
+  width: 290px;
+  padding-top: 15px;
 }
 
 .menu-link {
@@ -68,7 +71,7 @@ nav {
 .rss {
   background: url(/img/icons/rss.png);
   .size(21px);
-  margin-left: 207px;
+  margin-right: 11px;
   margin-top: 14px;
-  float: left;
+  float: right;
 }

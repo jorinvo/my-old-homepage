@@ -2,7 +2,7 @@ define([
   'jquery',
   'backbone',
   'hogan',
-  'text!temp/widgets/delicious.html'
+  'text!temps/widgets/delicious.html'
 ], function($, Backbone, hogan, deliciousTemp) {
 
 

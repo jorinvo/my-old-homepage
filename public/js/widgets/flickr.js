@@ -2,7 +2,7 @@ define([
   'jquery',
   'backbone',
   'hogan',
-  'text!temp/widgets/flickr.html'
+  'text!temps/widgets/flickr.html'
 ], function($, Backbone, hogan, flickrTemp) {
 
 

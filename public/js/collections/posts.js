@@ -15,17 +15,22 @@ define([
     initialize: function() {
     },
 
-    fetch: function(id, cb) {
+    fetch: function(req, cb) {
 
       $.getJSON(
         'http://api.tumblr.com/v2/blog/jorinvogel.tumblr.com/'
         + 'posts?api_key=hEEn5blpQrSOx5XGgJp6L1vbsQUpM7aAIxvHmpdoxkDYQoI2q4'
-        + ( id? '&id=' + id : '' )
+        + ( req.id? '&id=' + req.id : '' )
+        + ( req.limit? '&limit=' + req.limit : '' )
+        + ( req.offset? '&offset=' + req.offset : '' )
         + '&jsonp=?'
         , _.bind(function (data) {
           if ( data.meta.status === 404 ) {
             alert('404');
           } else {
+
+            this.totalPosts = data.response.total_posts;
+
             _.each(data.response.posts, _.bind( function (el) {
 
               var id = el.id.toString();
@@ -62,7 +67,7 @@ define([
     },
 
     fetchPost: function(id, cb) {
-      this.fetch(id, _.bind(function() {
+      this.fetch({ id: id }, _.bind(function() {
         var post = this.get(id);
         this.trigger('renderPost', post);
         post.trigger('showMe');
@@ -72,8 +77,21 @@ define([
     },
 
     fetchPosts: function() {
-      this.fetch(null, _.bind(function() {
+      this.fetch({limit: 6 }, _.bind(function() {
         this.trigger('ready');
+      }, this) );
+
+      return this;
+    },
+
+    loadMorePosts: function() {
+      var oldLength = this.length;
+      this.fetch({limit: 3, offset: oldLength }, _.bind(function() {
+        var newPosts = oldLength - this.length;
+        if ( (newPosts > -3) || (this.length === this.totalPosts) ) {
+          this.trigger('noMorePosts');
+        }
+        this.trigger('postsLoaded', newPosts);
       }, this) );
 
       return this;

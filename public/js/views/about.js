@@ -1,7 +1,7 @@
 define([
   'jquery',
   'backbone',
-  'text!temp/about.html',
+  'text!temps/about.html',
   'widgets/twitter',
   'widgets/github',
   'widgets/delicious',
@@ -22,6 +22,14 @@ define([
       this.github = new Delicious({parent: this});
       this.github = new Flickr({parent: this});
 
+      var $nameIs = $('#name-is');
+
+      this.on('activate', function(){
+        $nameIs.removeClass('no-width');
+      });
+      this.on('deactivate', function(){
+        $nameIs.addClass('no-width');
+      });
     },
 
     managerIndex: 0,

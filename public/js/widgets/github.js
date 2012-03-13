@@ -2,7 +2,7 @@ define([
   'jquery',
   'backbone',
   'hogan',
-  'text!temp/widgets/github.html'
+  'text!temps/widgets/github.html'
 ], function($, Backbone, hogan, githubTemp) {
 
 

@@ -2,7 +2,7 @@ define([
   'jquery',
   'backbone',
   'hogan',
-  'text!temp/widgets/twitter.html'
+  'text!temps/widgets/twitter.html'
 ], function($, Backbone, hogan, twitterTemp) {
 
 

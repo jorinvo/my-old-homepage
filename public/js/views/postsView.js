@@ -2,7 +2,7 @@ define([
   'jquery',
   'backbone',
   'hogan',
-  'text!temp/post.html',
+  'text!temps/post.html',
   'utils/manager',
   'views/postView'
 ], function($, Backbone, hogan, postTemp, Manager, PostView) {
