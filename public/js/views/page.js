@@ -1,7 +1,8 @@
 define([
   'jquery',
+  'underscore',
   'backbone'
-], function($, Backbone) {
+], function($, _, Backbone) {
 
   var Page = Backbone.View.extend({
 
@@ -44,6 +45,18 @@ define([
         .loadView('postsView', _.bind(function() {
           this.postsView.showPost(post);
         }, this) );
+
+      return this;
+    },
+
+    openProject: function(project) {
+      _gaq.push([ '_trackPageview', '/work/' + project ]);
+
+      this
+        .activeLink('work')
+        .loadView('work', _.bind(function() {
+          this.work.showProject(project);
+        }, this));
 
       return this;
     },

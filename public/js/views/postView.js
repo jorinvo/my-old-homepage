@@ -1,7 +1,8 @@
 define([
   'jquery',
+  'underscore',
   'backbone'
-], function($, Backbone) {
+], function($, _, Backbone) {
 
   PostView = Backbone.View.extend({
 

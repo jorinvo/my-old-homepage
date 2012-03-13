@@ -1,7 +1,8 @@
 define([
   'jquery',
+  'underscore',
   'backbone'
-], function($, Backbone) {
+], function($, _, Backbone) {
 
   var DeadLink = Backbone.View.extend({
 

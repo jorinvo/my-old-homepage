@@ -1,12 +1,13 @@
 define([
   'jquery',
+  'underscore',
   'backbone',
   'text!temps/about.html',
   'widgets/twitter',
   'widgets/github',
   'widgets/delicious',
   'widgets/flickr'
-], function($, Backbone, aboutTemp, Twitter, Github, Delicious, Flickr) {
+], function($, _, Backbone, aboutTemp, Twitter, Github, Delicious, Flickr) {
 
   var Page = Backbone.View.extend(_.extend(jorin.protoPage, {
 

@@ -1,10 +1,11 @@
 define([
   'jquery',
+  'underscore',
   'backbone',
   'hogan',
   'text!temps/blog.html',
   'text!temps/post_thumbnails.html'
-], function($, Backbone, hogan, blogTemp, post_thumbnailsTemp) {
+], function($, _, Backbone, hogan, blogTemp, post_thumbnailsTemp) {
 
   var Blog = Backbone.View.extend(_.extend(jorin.protoPage, {
 

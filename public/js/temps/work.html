@@ -1,0 +1,33 @@
+<a id="work-left" href="" title="">
+  <div class="arrow-left"></div>
+</a>
+<a id="work-right" href="" title="">
+  <div class="arrow-right"></div>
+</a>
+
+<div class="mask">
+
+  <div id="works" class="works">
+    {{#projects}}
+      <article class="work-view">
+        <a href="{{url}}" target="_blank" class="work-link">
+          <img src="img/work/{{img}}" alt="" class="work-image">
+          <div class="new-tab"></div>
+        </a>
+        <div class="work-text">
+          <a href="{{url}}" target="_blank" title="">
+            <h3 class="work-teaser">
+              architekt-sickert.de - Portfolio for an architect
+            </h3>
+          </a>
+          <div class="work-more">more</div>
+          <p class="work-desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          </p>
+        </div>
+      </article>
+    {{/projects}}
+  </div>
+
+</div>

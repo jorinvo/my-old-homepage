@@ -42,6 +42,11 @@ app.get('/comments/:comment', function(req, res) {
   res.render('comments.html', { title: title });
 });
 
+app.get('/work/:project', function(req, res) {
+  var page = 'work/' + req.params.project;
+  res.redirect('/?page='+ page);
+});
+
 console.log(
   "Express server listening on port %d in %s mode",
   app.address().port,

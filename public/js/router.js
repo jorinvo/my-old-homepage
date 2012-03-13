@@ -1,7 +1,8 @@
 define([
   'jquery',
+  'underscore',
   'backbone'
-], function($, Backbone) {
+], function($, _, Backbone) {
 
   var Router = Backbone.Router.extend({
 
@@ -9,35 +10,40 @@ define([
       '': 'about',
       'about': 'about',
       'work': 'work',
+      'work/:project': 'project',
       'blog': 'blog',
-      'labs': 'labs',
       'blog/:post': 'post',
+      'labs': 'labs',
       '404': 'deadLink',
       '*path': 'notFound'
     },
 
-    about: function(){
+    about: function() {
       jorin.title('About');
       jorin.page.open('about');
     },
 
-    work: function(){
+    work: function() {
       jorin.title('Work');
       jorin.page.open('work');
     },
 
-    blog: function(){
+    blog: function() {
       jorin.title('Blog');
       jorin.page.open('blog');
     },
 
-    labs: function(){
+    labs: function() {
       jorin.title('Labs');
       jorin.page.open('labs');
     },
 
-    post: function(post){
+    post: function(post) {
       jorin.page.openPost(post);
+    },
+
+    project: function(project) {
+      jorin.page.openProject(project);
     },
 
     deadLink: function() {

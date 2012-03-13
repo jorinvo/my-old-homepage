@@ -1,11 +1,12 @@
 define([
   'jquery',
+  'underscore',
   'backbone',
   'hogan',
   'text!temps/post.html',
   'utils/manager',
   'views/postView'
-], function($, Backbone, hogan, postTemp, Manager, PostView) {
+], function($, _, Backbone, hogan, postTemp, Manager, PostView) {
 
   var PostsView = Backbone.View.extend({
 

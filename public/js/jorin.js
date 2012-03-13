@@ -3,7 +3,7 @@ define([
   'router',
   'utils/helpers',
   'utils/manager',
-  'collections/posts',
+  'modules/posts',
   'views/page'
 ], function(_, Router, helpers, Manager, PostsCollection, Page) {
   var jorin = _.extend(helpers, {
