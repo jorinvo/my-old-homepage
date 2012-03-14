@@ -28,22 +28,22 @@ define([
       jorin.page.open('work');
     },
 
+    project: function(project) {
+      jorin.page.openProject(project);
+    },
+
     blog: function() {
       jorin.title('Blog');
       jorin.page.open('blog');
-    },
-
-    labs: function() {
-      jorin.title('Labs');
-      jorin.page.open('labs');
     },
 
     post: function(post) {
       jorin.page.openPost(post);
     },
 
-    project: function(project) {
-      jorin.page.openProject(project);
+    labs: function() {
+      jorin.title('Labs');
+      jorin.page.open('labs');
     },
 
     deadLink: function() {

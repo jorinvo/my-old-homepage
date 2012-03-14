@@ -12,8 +12,10 @@ define([
     model: Project,
 
     initialize: function() {
-      this.data = new Backbone.Model();
+      this.data = new Backbone.Model;
       this.add(JSON.parse(projectsData));
+
+      return this;
     },
 
     comparator: function(project) {
@@ -28,7 +30,9 @@ define([
         current--;
       }
       this.data.set('current', current);
-      return (current * -600) + 'px';
+      this.trigger('move', current);
+
+      return this;
     },
 
     right: function() {
@@ -39,13 +43,30 @@ define([
         current++;
       }
       this.data.set('current', current);
-      return (current * -600) + 'px';
+      this.trigger('move', current);
+
+      return this;
     },
 
     show: function(id) {
       var current = (this.get(id) || this.first()).id;
       this.data.set('current', current);
-      return (current * -600) + 'px';
+      this.trigger('move', current);
+
+      return this;
+    },
+
+    startTimer: function() {
+      this.timer = setInterval(_.bind(this.right, this), 3000);
+    },
+
+    stopTimer: function() {
+      clearInterval(this.timer);
+    },
+
+    resetTimer: function() {
+      this.stopTimer();
+      this.startTimer();
     }
 
 

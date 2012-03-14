@@ -7,6 +7,14 @@ section {
   position: absolute;
   top: 0;
   width: 966px;
+	.animation-duration(1.5s);
+	&.bounceInLeft,
+	&.bounceInRight {
+		.animation-delay(0.2s);
+	}
+	&.bounceInDown {
+		.animation-delay(0.3s);
+	}
 }
 
 .connect-load {
@@ -48,17 +56,4 @@ section {
 		margin-top: 0;
 	}
 	.transition(0.2s, margin);
-}
-
-.animated {
-	.animation-duration(1.5s) !important;
-}
-
-.bounceInLeft,
-.bounceInRight {
-	.animation-delay(0.2s);
-}
-
-.bounceInDown {
-	.animation-delay(0.3s);
 }

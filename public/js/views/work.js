@@ -20,40 +20,93 @@ define([
 
       this.render();
 
-      this.$works = this.$('#works').css({ width: (this.projects.length * 600) + 'px' });
+      this.$works = this.$('#works').css({ width: (this.projects.length * 650) + 'px' });
 
-      this.projects.data.on('change:current', function(data) {
-        jorin.router.navigate('work/' + data.get('current'));
-      });
+      this
+        .on('activate', function() {
+          this.logHistory();
+          this.startTimer();
+        }, this)
+        .on('deactivate', this.stopTimer, this);
 
+      this.projects.data
+        .on('change:current', this.logHistory, this)
+        .set('current', 0);
+
+
+      this.projects.on('move', function(current) {
+        var left = (current * -650) + 'px';
+        this.$works
+          .css({ left: left })
+          .find('.work-text')
+          .removeClass('bounceIn')
+          .addClass('hide')
+          .eq(current)
+          .removeClass('hide')
+          .addClass('bounceIn');
+      }, this)
+
+      return this;
     },
 
     managerIndex: 1,
 
     render: function() {
       this.$el.html( this.temp.render({ projects: this.projects.toJSON() }) );
+
+      return this;
     },
 
     showProject: function(project) {
-      var left = this.projects.show(project);
-      this.$works.css({ left: left });
+      this.projects.show(project);
+
+      return this;
+    },
+
+    logHistory: function() {
+      jorin.router.navigate('work/' + this.projects.data.get('current'));
     },
 
     events: {
-      'click #work-left': 'left',
-      'click #work-right': 'right'
+      'click #work-left': 'moveLeft',
+      'click #work-right': 'moveRight',
+      'mouseenter #works': 'stopTimer',
+      'mouseleave #works': 'startTimer',
+      'click .more-link': 'showDesc'
     },
 
-    left: function(e) {
+    moveLeft: function(e) {
       e.preventDefault();
-      var left = this.projects.left();
-      this.$works.css({ left: left });
+      this.projects.resetTimer();
+      this.projects.left();
+
+      return this;
     },
 
-    right: function(e) {
+    moveRight: function(e) {
       e.preventDefault();
-      var left = this.projects.right();
-      this.$works.css({ left: left });
+      this.projects.resetTimer();
+      this.projects.right();
+
+      return this;
+    },
+
+    startTimer: function() {
+      this.projects.startTimer();
+
+      return this;
+    },
+
+    stopTimer: function() {
+      this.projects.stopTimer();
+
+      return this;
+    },
+
+    showDesc: function(e) {
+      log($(e.target).parent().find('.work-desc').toggleClass('no-height'));
+
+      return this;
     }
 
   }));
