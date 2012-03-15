@@ -11,20 +11,22 @@
     {{#projects}}
       <article class="work-view">
         <a href="{{url}}" target="_blank" class="work-link">
-          <img src="img/work/{{img}}" alt="" class="work-image">
+          <img src="/img/data/{{img}}" alt="" class="work-image">
           <div class="new-window"></div>
         </a>
         <div class="work-text animated hide">
           <a href="{{url}}" target="_blank" title="">
             <h3 class="work-teaser">
-              architekt-sickert.de - Portfolio for an architect
+              {{teaser}}
             </h3>
           </a>
           <div class="work-more">
-            <span class="more-link">more</span>
+            <div class="more-link">
+              <span>more</span>
+              <span class="hide">less</span>
+            </div>
             <p class="work-desc no-height">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              {{desc}}
             </p>
           </div>
           <div class="clear"></div>

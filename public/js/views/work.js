@@ -20,7 +20,7 @@ define([
 
       this.render();
 
-      this.$works = this.$('#works').css({ width: (this.projects.length * 650) + 'px' });
+      this.$works = this.$('#works').css({ width: (this.projects.length * 652) + 'px' });
 
       this
         .on('activate', function() {
@@ -35,7 +35,7 @@ define([
 
 
       this.projects.on('move', function(current) {
-        var left = (current * -650) + 'px';
+        var left = (current * -652) + 'px';
         this.$works
           .css({ left: left })
           .find('.work-text')
@@ -104,7 +104,10 @@ define([
     },
 
     showDesc: function(e) {
-      log($(e.target).parent().find('.work-desc').toggleClass('no-height'));
+      var $tar = $(e.currentTarget);
+
+      $tar.children().toggleClass('hide');
+      $tar.parent().find('.work-desc').toggleClass('no-height');
 
       return this;
     }

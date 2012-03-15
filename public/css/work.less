@@ -4,37 +4,39 @@
 
 
 @a-margin: 80px;
-@a-left: 25px;
-@a-top: 15px;
+@a-left: 20px;
+@a-top: 10px;
 
 .arrow-left, .arrow-right {
   position: relative;
   .size(31px, 46px);
   padding: @a-top @a-left;
   top: 90px;
+  border: 1px solid white;
+  .border-radius(50%);
   &:hover {
-    opacity: 0.9;
+    border: 1px solid black;
   }
 }
 
 .arrow-left {
   float: left;
   left: @a-margin;
-  background: url(/img/icons/arrow-left.png) no-repeat @a-left @a-top;
+  background: url(/img/icons/arrow-left.png) no-repeat 18px @a-top;
 }
 
 .arrow-right {
   float: right;
-  background: url(/img/icons/arrow-right.png) no-repeat @a-left @a-top;
+  background: url(/img/icons/arrow-right.png) no-repeat 24px @a-top;
   right: @a-margin;
 }
 
-@work-width: 650px;
+@w-width: 652px;
 
 .mask {
   overflow: hidden;
   margin: 0 auto;
-  width: @work-width;
+  width: @w-width;
 }
 
 .works {
@@ -45,20 +47,16 @@
 .work-view {
   float: left;
   position: relative;
-  width: @work-width;
+  width: @w-width;
 }
 
-.work-link {
-  z-index: 1;
-  &:hover .new-window {
-    opacity: 0.7;
-  }
+.work-link:hover .new-window {
+  opacity: 0.7;
 }
 
 .work-image {
-  background: blue;
-  border-radius: 15px;
-  width: 100%;
+  border: 1px solid black;
+  width:  650px;
   height: 270px;
 }
 
@@ -72,10 +70,10 @@
 }
 
 .work-text {
-  background: rgba(0,0,0, 0.6);
-  color: white;
-  border-radius: 10px;
-  width: 100%;
+  border-radius: 5px;
+  width: 650px;
+  border: 1px solid black;
+  margin-top: 20px;
   .animation-duration(0.5s);
   &.bounceIn {
     .animation-delay(1s);
@@ -83,16 +81,21 @@
 }
 
 .work-teaser {
-  color: white;
+  margin-top: 0;
+  padding-top: 7px;
   text-align: center;
 }
 
 .more-link {
   float: right;
+  margin-top: -18px;
+  margin-right: 10px;
   .my-button();
 }
 
 .work-desc {
-  height: 50px;
+  height: 70px;
+  margin: 0 10px 3px 10px;
+  padding-top: 10px;
   .transition(height, 0.2s, ease);
 }
