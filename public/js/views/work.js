@@ -29,22 +29,23 @@ define([
         }, this)
         .on('deactivate', this.stopTimer, this);
 
-      this.projects.data
-        .on('change:current', this.logHistory, this)
-        .set('current', 0);
+      this.projects
+        .on('move', function(current) {
+          var left = (current * -652) + 'px';
+          this.$works
+            .css({ left: left })
+            .find('.work-text')
+            .removeClass('bounceIn')
+            .addClass('hide')
+            .eq(current)
+            .removeClass('hide')
+            .addClass('bounceIn');
+        }, this)
+        .trigger('move', 0)
+        .data
+          .on('change:current', this.logHistory, this)
+          .set('current', 0);
 
-
-      this.projects.on('move', function(current) {
-        var left = (current * -652) + 'px';
-        this.$works
-          .css({ left: left })
-          .find('.work-text')
-          .removeClass('bounceIn')
-          .addClass('hide')
-          .eq(current)
-          .removeClass('hide')
-          .addClass('bounceIn');
-      }, this)
 
       return this;
     },

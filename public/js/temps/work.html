@@ -20,17 +20,19 @@
               {{teaser}}
             </h3>
           </a>
-          <div class="work-more">
-            <div class="more-link">
-              <span>more</span>
-              <span class="hide">less</span>
+          {{#desc}}
+            <div class="work-more">
+              <div class="more-link">
+                <span>more</span>
+                <span class="hide">less</span>
+              </div>
+              <p class="work-desc no-height">
+                {{desc}}
+              </p>
             </div>
-            <p class="work-desc no-height">
-              {{desc}}
-            </p>
+            <div class="clear"></div>
           </div>
-          <div class="clear"></div>
-        </div>
+        {{/desc}}
       </article>
     {{/projects}}
   </div>

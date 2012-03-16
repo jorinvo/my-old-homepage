@@ -1,12 +1,13 @@
 #container {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
+	position: relative;
 }
 
 section {
   position: absolute;
   top: 0;
-  width: 966px;
+  width: 100%;
 	.animation-duration(1.5s);
 	&.bounceInLeft,
 	&.bounceInRight {
@@ -18,15 +19,15 @@ section {
 }
 
 .connect-load {
-	right: 7px !important;
+	right: 1% !important;
 }
 
 .connect {
 	background: white;
 	position: fixed;
-	bottom: 7px;
+	bottom: 1%;
 	//prop changes on init
-	right: -200px;
+	right: -50%;
 
 /*
 	//needed if it is laying on some other content

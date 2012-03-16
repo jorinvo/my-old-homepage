@@ -3,14 +3,14 @@
     "id": 0,
     "url": "http://ariane-koch.de/",
     "img": "ariane-koch.png",
-    "teaser": "ariane-koch.de - portfolio for an artist",
-    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "teaser": "ariane-koch.de - portfolio of an artist",
+    "desc": false
   },
   {
     "id": 1,
     "url": "http://architekt-sickert.de/",
     "img": "architekt-sickert.png",
-    "teaser": "architekt-sickert.de - portfolio for an architect",
-    "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "teaser": "architekt-sickert.de - portfolio of an architect",
+    "desc": false
   }
 ]
