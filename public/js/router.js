@@ -13,7 +13,7 @@ define([
       'work/:project': 'project',
       'blog': 'blog',
       'blog/:post': 'post',
-      'labs': 'labs',
+      'lab': 'lab',
       '404': 'deadLink',
       '*path': 'notFound'
     },
@@ -41,9 +41,9 @@ define([
       jorin.page.openPost(post);
     },
 
-    labs: function() {
-      jorin.title('Labs');
-      jorin.page.open('labs');
+    lab: function() {
+      jorin.title('Lab');
+      jorin.page.open('lab');
     },
 
     deadLink: function() {

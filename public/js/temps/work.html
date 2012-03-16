@@ -11,7 +11,7 @@
     {{#projects}}
       <article class="work-view">
         <a href="{{url}}" target="_blank" class="work-link">
-          <img src="/img/data/{{img}}" alt="" class="work-image">
+          <img src="/img/data/work/{{img}}" alt="" class="work-image">
           <div class="new-window"></div>
         </a>
         <div class="work-text animated hide">
@@ -22,10 +22,10 @@
           </a>
           {{#desc}}
             <div class="work-more">
-              <div class="more-link">
+              <button class="more-link">
                 <span>more</span>
                 <span class="hide">less</span>
-              </div>
+              </button>
               <p class="work-desc no-height">
                 {{desc}}
               </p>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Bruchrechner",
+    "thumbnail": "bruchrechner.png",
+    "desc": "Batman.js testing. Read <a href=\"blog/18662515126\">this post</a> for more info.",
+    "demo": "http://bruchrechner.herokuapp.com/",
+    "source": "https://github.com/jorin-vogel/Bruchrechner"
+  },
+  {
+    "id": 1,
+    "title": "Yourwall",
+    "thumbnail": "yourwall.png",
+    "desc": "Node. Backbone. jQueryUI. Socket.io. Redis. Little app I built to test how some of this shiny new technologies play together. <a href=\"blog/18662487682\">View blog-post here</a>.",
+    "demo": "http://yourwall.no.de/",
+    "source": "https://github.com/jorin-vogel/Yourwall"
+  },
+  {
+    "id": 2,
+    "title": "VPC-App",
+    "thumbnail": "vpc.png",
+    "desc": "When some friends and I were joking about this VPC thing I decided to build a little app for it because I wanted to play around with the Facebook-API anyway. Works on mobile too.",
+    "demo": "https://apps.facebook.com/vpc-app/",
+    "source": "https://github.com/jorin-vogel/VPC-App"
+  }
+]

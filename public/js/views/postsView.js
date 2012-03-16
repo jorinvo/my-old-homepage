@@ -10,7 +10,9 @@ define([
 
   var PostsView = Backbone.View.extend({
 
-    el: '#posts-container',
+    tagName: 'section',
+    className: 'posts-container animated bounceOutUp',
+    id: 'posts-container',
 
     initialize: function() {
 

@@ -19,7 +19,7 @@ define([
     },
 
     comparator: function(project) {
-      return project.id;
+      return -project.id;
     },
 
     left: function() {
