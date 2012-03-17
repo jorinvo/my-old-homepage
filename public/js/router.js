@@ -48,7 +48,7 @@ define([
 
     deadLink: function() {
       jorin.title('404 - not found!');
-      jorin.page.open('deadLink');
+      jorin.page.open('404');
     },
 
     notFound: function () {

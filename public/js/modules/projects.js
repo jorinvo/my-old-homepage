@@ -24,8 +24,8 @@ define([
 
     left: function() {
       var current = this.data.get('current');
-      if (current === this.first().id) {
-        current = this.last().id;
+      if (current === this.last().id) {
+        current = this.first().id;
       } else {
         current--;
       }
@@ -37,8 +37,8 @@ define([
 
     right: function() {
       var current = this.data.get('current');
-      if (current === this.last().id) {
-        current = this.first().id;
+      if (current === this.first().id) {
+        current = this.last().id;
       } else {
         current++;
       }
@@ -49,7 +49,7 @@ define([
     },
 
     show: function(id) {
-      var current = (this.get(id) || this.first()).id;
+      var current = (this.get(id) || this.last()).id;
       this.data.set('current', current);
       this.trigger('move', current);
 

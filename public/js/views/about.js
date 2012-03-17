@@ -23,13 +23,11 @@ define([
       this.github = new Delicious({parent: this});
       this.github = new Flickr({parent: this});
 
-      var $nameIs = $('#name-is');
-
       this.on('activate', function(){
-        $nameIs.removeClass('no-width');
+        jorin.page.trigger('show-nameIs');
       });
       this.on('deactivate', function(){
-        $nameIs.addClass('no-width');
+        jorin.page.trigger('hide-nameIs');
       });
     },
 

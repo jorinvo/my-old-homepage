@@ -15,6 +15,14 @@ define([
       $('header').addClass('header-load');
       $('.connect').addClass('connect-load');
 
+
+      var $nameIs = $('#name-is');
+      this.on('hide-nameIs', function(){
+        $nameIs.addClass('no-width');
+      });
+      this.on('show-nameIs', function(){
+        $nameIs.removeClass('no-width');
+      });
     },
 
     activeLink: function(href) {

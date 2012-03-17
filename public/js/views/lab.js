@@ -23,7 +23,7 @@ define([
       return this;
     },
 
-    managerIndex: 1,
+    managerIndex: 3,
 
     render: function() {
       this.$el.html( this.temp.render({ experiments: this.experiments.toJSON() }) );
