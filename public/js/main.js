@@ -20,7 +20,9 @@ require(
       jorin.init();
 
       if (Modernizr.cssanimations) {
-        require(['utils/doAnimation']);
+        require(['utils/doAnimation_new']);
+      } else {
+        require(['utils/doAnimation_old']);
       }
     });
   }
