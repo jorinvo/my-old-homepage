@@ -21,13 +21,14 @@ define([
       $.getJSON(
         'http://api.tumblr.com/v2/blog/jorinvogel.tumblr.com/'
         + 'posts?api_key=hEEn5blpQrSOx5XGgJp6L1vbsQUpM7aAIxvHmpdoxkDYQoI2q4'
+        + '&type=photo'
         + ( req.id? '&id=' + req.id : '' )
         + ( req.limit? '&limit=' + req.limit : '' )
         + ( req.offset? '&offset=' + req.offset : '' )
         + '&jsonp=?'
         , _.bind(function (data) {
           if ( data.meta.status === 404 ) {
-            alert('404');
+            jorin.router.navigate('404', { trigger: true });
           } else {
 
             this.totalPosts = data.response.total_posts;
@@ -68,6 +69,10 @@ define([
     },
 
     fetchPost: function(id, cb) {
+      if (!parseInt(id)) {
+        jorin.router.navigate('404', { trigger: true });
+        return this;
+      }
       this.fetch({ id: id }, _.bind(function() {
         var post = this.get(id);
         this.trigger('renderPost', post);

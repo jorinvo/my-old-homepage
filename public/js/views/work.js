@@ -10,7 +10,7 @@ define([
   var Work = Backbone.View.extend(_.extend(jorin.protoPage, {
 
     id: 'work',
-    className: 'work  animated bounceOutUp',
+    className: 'work  animated',
 
     initialize: function() {
 
@@ -25,21 +25,21 @@ define([
       this
         .on('activate', function() {
           this.logHistory();
-          this.startTimer();
+          this.projects.resetTimer();
         }, this)
         .on('deactivate', this.stopTimer, this);
 
       this.projects
         .on('move', function(current) {
           var left = (current * -652) + 'px';
-          this.$works
+          var $cur = this.$works
             .css({ left: left })
             .find('.work-text')
-            .removeClass('bounceIn')
             .addClass('hide')
-            .eq(current)
-            .removeClass('hide')
-            .addClass('bounceIn');
+            .eq(current);
+          setTimeout(function() {
+            $cur.doAnimation('inPop');
+          }, 1000);
         }, this)
         .trigger('move', 0)
         .data

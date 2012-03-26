@@ -10,7 +10,7 @@ define([
   var Blog = Backbone.View.extend(_.extend(jorin.protoPage, {
 
     id: 'blog',
-    className: 'blog animated bounceOutUp',
+    className: 'blog animated',
 
     initialize: function() {
 

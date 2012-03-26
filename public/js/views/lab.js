@@ -10,7 +10,7 @@ define([
   var Lab = Backbone.View.extend(_.extend(jorin.protoPage, {
 
     id: 'lab',
-    className: 'lab  animated bounceOutUp',
+    className: 'lab  animated',
 
     initialize: function() {
 

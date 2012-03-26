@@ -4,39 +4,35 @@ define([], function(){
 
     tagName: 'section',
 
-    managerLast: 'bounceOutUp',
-
     activate: function(i) {
+      var animation = 'inTop';
       this.trigger('activate');
-      this.$el.removeClass(this.managerLast);
       if (i >= 0) {
         if (i > this.managerIndex) {
-          this.managerLast = 'bounceInLeft';
+          animation = 'inLeft';
         } else {
-          this.managerLast = 'bounceInRight';
+          animation = 'inRight';
         }
       } else {
-        this.managerLast = 'bounceInDown';
+        animation = 'inTop';
       }
-      this.$el.addClass(this.managerLast);
+      this.$el.doAnimation(animation);
       setTimeout(function() {
         $(document).scrollTop(0);
       }, 750);
     },
 
     deactivate: function(i) {
+      var animation = 'outTop';
       this.trigger('deactivate');
-      this.$el.removeClass(this.managerLast);
       if (i >= 0) {
         if (i > this.managerIndex) {
-          this.managerLast = 'bounceOutLeft';
+          animation = 'outLeft';
         } else {
-          this.managerLast = 'bounceOutRight';
+          animation = 'outRight';
         }
-      } else {
-        this.managerLast = 'bounceOutUp';
       }
-      this.$el.addClass(this.managerLast);
+      this.$el.doAnimation(animation);
     }
 
   };

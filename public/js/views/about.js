@@ -12,7 +12,7 @@ define([
   var Page = Backbone.View.extend(_.extend(jorin.protoPage, {
 
     id: 'about',
-    className: 'about animated bounceOutUp',
+    className: 'about animated',
 
     initialize: function () {
 
