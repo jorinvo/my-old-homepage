@@ -30,10 +30,6 @@ define([
       this.$el
         .removeClass('bounceOutUp hide')
         .addClass('bounceInDown');
-      //prevents back-button position: fixed from being broken
-      setTimeout(_.bind(function() {
-        this.$el.removeClass('bounceInDown');
-      }, this), 1500);
       jorin.keydown.on('keydown', function(e) {
         if (e.which === 27) jorin.router.navigate('blog', { trigger: true });
       });
