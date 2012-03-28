@@ -12,12 +12,10 @@ require.config( {
 } );
 
 require(
-  ['jquery', 'jorin', 'modernizr', 'libs/log'],
+  ['jquery', 'jorin', 'modernizr', 'libs/log', 'utils/doAnimation_new'],
   function( $, jorin ) {
     $(function(){
       jorin.init();
-
-      require(['utils/doAnimation_' + ( Modernizr.cssanimations ? 'new' : 'old' )]);
     });
   }
 );
