@@ -115,6 +115,18 @@
             overwrite: {
                 dir: "../prod/public/js/views"
             }
+        },
+        {
+            name: "utils/doAnimation_new",
+            overwrite: {
+                dir: "../prod/public/js/utils"
+            }
+        },
+        {
+            name: "utils/doAnimation_old",
+            overwrite: {
+                dir: "../prod/public/js/utils"
+            }
         }
     ],
 
