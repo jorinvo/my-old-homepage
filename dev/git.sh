@@ -1,4 +1,5 @@
-  pwd
-  git add .
-  git commit -am '$(MSG)'
-  git push origin master
+cd prod
+pwd
+git add .
+git commit -am '$(MSG)'
+git push origin master
