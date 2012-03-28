@@ -27,4 +27,4 @@ deploy:
 	git push origin master
 
 	# push to heroku
-	rake -f utils/heroku.rake MSG=$(MSG)
+	rake -f utils/heroku.rake m='$(MSG)'
