@@ -30,4 +30,4 @@ deploy:
 	cd prod
 	git add .
 	git commit -am '$(MSG)'
-	git push heroku master
+	git push origin master
