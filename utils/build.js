@@ -42,9 +42,6 @@
             include: [
                 "hogan",
                 "text"
-            ],
-            exclude: [
-                "utils/doAnimation_new"
             ]
         },
         {
