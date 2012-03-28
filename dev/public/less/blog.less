@@ -1,0 +1,40 @@
+@import "utils/helpers.less";
+@import "utils/gradients.less";
+
+.blog {
+  padding-top: 8%;
+}
+
+.thumbnail {
+  margin: 3.5%;
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  .border-radius(3px);
+  &:hover, &:focus {
+    .inset-box-shadow(0 0 10px black);
+    .caption {
+      .inset-box-shadow(0 -5px 20px black);
+    }
+  }
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  padding: 0 5px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  width: 240px;
+  text-align: center;
+  .border-radius(3px);
+}
+
+.load-more {
+  margin-bottom: 10%;
+}
+
+.load-center{
+  width: 9.5%;
+  margin: 0 auto;
+}

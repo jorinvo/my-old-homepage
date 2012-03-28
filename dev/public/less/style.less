@@ -1,0 +1,114 @@
+@import "utils/normalize.less";
+@import "utils/media-queries.less";
+@import "utils/tipsy.less";
+@import "utils/animate.less";
+
+@import "utils/helpers.less";
+@import "utils/gradients.less";
+
+@import "components/page.less";
+@import "components/header.less";
+
+
+@green: #3CFC4E;
+
+
+body {
+  font-family: 'Exo', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 0.8em;
+}
+
+a {
+	text-decoration: none;
+  font-weight: 700;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+
+  &:hover, &:visited:hover {
+    color: @green;
+  }
+}
+
+img {
+  .border-radius(2px);
+}
+
+ul {
+	list-style: none;
+  padding-left: 25px;
+}
+
+li {
+  padding-bottom: 3%;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.clear {
+  /* For modern browsers */
+  &:before,
+  &:after {
+    content:"";
+    display:table;
+  }
+
+  &:after {
+      clear:both;
+  }
+
+/* For IE 6/7 (trigger hasLayout) */
+    zoom:1;
+}
+
+.no-deco {
+  text-decoration: none;
+}
+
+.block {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
+.no-width {
+  width: 0px;
+  overflow: hidden;
+}
+
+.no-height {
+  height: 0px;
+  overflow: hidden;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+button {
+  padding: 3px 11px 1px 11px;
+  .border-radius(20px);
+  border: none;
+  .box-shadow(0 1px 3px black);
+  color: white;
+  font-size: 12px;
+  font-weight: bolder;
+  cursor: pointer;
+  &:hover, &:focus {
+    .box-shadow(0 0 3px black);
+  }
+  .black-gradient();
+}

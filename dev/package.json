@@ -1,0 +1,12 @@
+{
+  "name"          : "blogJorin",
+  "version"       : "0.0.1",
+  "description"   : "Blog",
+  "author"        : "jorin",
+  "dependencies"  : {
+    "express":        ">= 2.4.6",
+    "ejs"           : ">=0.6.1",
+    "less": "*",
+    "requirejs": "*"
+  }
+}

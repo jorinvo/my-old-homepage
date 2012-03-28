@@ -1,0 +1,75 @@
+@import "utils/helpers.less";
+@import "utils/gradients.less";
+
+.posts-container {
+  background: white;
+  .size(56%, 100%);
+  padding: 11% 0 0 23%;
+}
+
+.close-post {
+  position: fixed;
+  margin-left: 705px;
+  margin-top: -31px;
+  padding: 0 8px;
+  z-index: 100;
+  background: black;
+  font-size: 16px;
+  font-weight: bolder;
+  color: white !important;
+  .border-radius(50%);
+  .box-shadow(0 0 25px black);
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+  }
+  .transition();
+  .tipsy {
+    margin-left: -109px;
+    margin-top: -21px;
+  }
+}
+
+.post-date {
+  float: right;
+  font-size: 11px;
+  padding-bottom: 15px;
+}
+
+.post-header {
+  text-align: center;
+}
+
+.post-title {
+  font-size: 20px;
+}
+
+.post-photo {
+  margin-top: 12px;
+  max-width: 400px;
+}
+
+.post {
+  display: none;
+}
+
+.tweet-post {
+  .size(25px);
+  background: url(/img/icons/tweet-it.png);
+  float: right;
+  cursor: pointer;
+  .border-radius(5px);
+  border: 1px solid white;
+  &:hover {
+    border: 1px solid black;
+  }
+  .tipsy {
+    margin-left: -70px;
+    margin-top: 1px;
+  }
+}
+
+.comments {
+  margin-left: -40px;
+  .size(108%, 750px);
+}
