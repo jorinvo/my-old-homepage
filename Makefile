@@ -25,9 +25,10 @@ deploy:
 	git add .
 	git commit -am '$(MSG)'
 	git push origin master
-
+	pwd
 	# push to heroku
 	cd prod
+	pwd
 	git add .
 	git commit -am '$(MSG)'
 	git push origin master
