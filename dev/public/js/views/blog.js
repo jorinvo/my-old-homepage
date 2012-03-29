@@ -38,6 +38,7 @@ define([
 
     append: function(data) {
       this.$('#posts').append( this.post_thumbnails.render(data) );
+      $(window).scrollTop(9999);
     },
 
     hideLoadButton: function() {

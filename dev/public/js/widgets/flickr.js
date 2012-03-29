@@ -22,18 +22,19 @@ define([
 
     render: function(data) {
       this.$el.html( this.temp.render(data) );
-    },
-
-    events: {
-      'click img': 'showImage',
-    },
-
-    showImage: function(e) {
-      e.preventDefault();
-      // log(this);
-      // $(e.target).attr('data-photo')
-      // jorin.router.navigate('')
     }
+    // ,
+
+  //   events: {
+  //     'click img': 'showImage',
+  //   },
+
+  //   showImage: function(e) {
+  //     // e.preventDefault();
+  //     // log(this);
+  //     // $(e.target).attr('data-photo')
+  //     // jorin.router.navigate('')
+  //   }
 
   });
 
