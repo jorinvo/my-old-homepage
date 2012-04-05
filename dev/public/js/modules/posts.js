@@ -69,7 +69,7 @@ define([
     },
 
     fetchPost: function(id, cb) {
-      if (!parseInt(id)) {
+      if (!parseInt(id, 10)) {
         jorin.router.navigate('404', { trigger: true });
         return this;
       }

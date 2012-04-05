@@ -2,7 +2,7 @@ define(['jquery', 'underscore'], function($, _){
 
 
   var Manager = function() {
-    this.current;
+    this.current = null;
     _.each(arguments, _.bind(this.add, this) );
   };
 
