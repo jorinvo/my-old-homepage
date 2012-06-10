@@ -12,5 +12,12 @@
     "img": "architekt-sickert.png",
     "teaser": "architekt-sickert.de - portfolio of an architect",
     "desc": false
+  },
+  {
+    "id": 2,
+    "url": "http://stuggi.tv/",
+    "img": "stuggi-tv.jpg",
+    "teaser": "STUGGI.TV",
+    "desc": "Wordpress-installation for a small media startup in Stuttgart"
   }
 ]

@@ -19,7 +19,7 @@
     "id": 2,
     "title": "VPC-App",
     "thumbnail": "vpc.png",
-    "desc": "When some friends and I were joking about this VPC thing I decided to build a little app for it because I wanted to play around with the Facebook-API anyway. Works on mobile too.",
+    "desc": 'When some friends and I were joking about this VPC thing I decided to build a little app for it because I wanted to play around with the Facebook-API anyway. Works on mobile too. And here is the unstable dev-version: <a href="http://vpc.phpfogapp.com/debug">click!</a>',
     "demo": "https://apps.facebook.com/vpc-app/",
     "source": "https://github.com/jorin-vogel/VPC-App"
   }
