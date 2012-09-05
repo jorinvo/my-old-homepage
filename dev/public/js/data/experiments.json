@@ -3,7 +3,7 @@
     "id": 0,
     "title": "Bruchrechner",
     "thumbnail": "bruchrechner.png",
-    "desc": "Batman.js testing. Read <a href=\"blog/18662515126\">this post</a> for more info.",
+    "desc": "Batman.js demo. Read <a href=\"blog/18662515126\">this post</a> for more info.",
     "demo": "http://bruchrechner.herokuapp.com/",
     "source": "https://github.com/jorin-vogel/Bruchrechner"
   },
