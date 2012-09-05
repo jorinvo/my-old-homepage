@@ -1,6 +1,6 @@
 var fs = require('fs'),
   express = require('express'),
-  app = express.createServer(),
+  app = express(),
   views = __dirname + '/views';
 
 app.configure(function() {
@@ -9,7 +9,7 @@ app.configure(function() {
   app.set('view options', {
     layout: false
   });
-  app.register('.html', require('ejs'));
+  app.engine('html', require('ejs').renderFile);
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
@@ -52,4 +52,4 @@ app.get('/work/:project', function(req, res) {
   res.redirect('/?page=' + page);
 });
 
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+console.log("Express server listening on port %d in %s mode", port, app.settings.env);
