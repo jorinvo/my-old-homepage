@@ -5,9 +5,8 @@ define([
   'text!temps/about.html',
   'widgets/twitter',
   'widgets/github',
-  'widgets/delicious',
   'widgets/flickr'
-], function($, _, Backbone, aboutTemp, Twitter, Github, Delicious, Flickr) {
+], function($, _, Backbone, aboutTemp, Twitter, Github, Flickr) {
 
   var Page = Backbone.View.extend(_.extend(jorin.protoPage, {
 
@@ -20,7 +19,6 @@ define([
 
       this.twitter = new Twitter({parent: this});
       this.github = new Github({parent: this});
-      this.github = new Delicious({parent: this});
       this.github = new Flickr({parent: this});
 
       this.on('activate', function(){
