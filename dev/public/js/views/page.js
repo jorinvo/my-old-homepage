@@ -12,9 +12,10 @@ define([
 
       this.$links = $('nav').children();
 
-      $('header').addClass('header-load');
-      $('.connect').addClass('connect-load');
-
+      this.$el.show(function() {
+        $('header').addClass('header-load');
+        $('.connect').addClass('connect-load');
+      });
 
       var $nameIs = $('#name-is');
       this.on('hide-nameIs', function(){

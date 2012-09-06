@@ -2,17 +2,25 @@ define(['jquery', 'modernizr'], function($) {
 
   var mode = Modernizr.cssanimations ? 'css3' : 'fallback';
 
+  var timeoutIn, timeoutOut, cbIn, cbOut;
+
   var animIn = function($el, klass) {
     $el.removeClass('hide').addClass(klass);
-    setTimeout(function() {
+    timeoutIn = setTimeout(cbIn = function() {
       $el.removeClass('hide').removeClass(klass);
+      cbIn = undefined;
     }, 1800);
   };
 
   var animOut = function($el, klass) {
     $el.addClass(klass);
-    setTimeout(function() {
+    clearTimeout(timeoutIn);
+    clearTimeout(timeoutOut);
+    if (cbIn) cbIn();
+    if (cbOut) cbOut();
+    timeoutOut = setTimeout(cbOut = function() {
       $el.addClass('hide').removeClass(klass);
+      cbOut = undefined;
     }, 1800);
   };
 
