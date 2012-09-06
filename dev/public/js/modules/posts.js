@@ -16,6 +16,8 @@ define([
     initialize: function() {
     },
 
+    model: Post,
+
     fetch: function(req, cb) {
 
       $.getJSON(
@@ -47,16 +49,19 @@ define([
 
               var photo = photos.original_size;
 
-              this.add( new Post({
-                title: el.tags[0],
-                encodedTitle: encodeURIComponent(el.tags[0]),
+              var texts = el.caption.split(/\n/);
+              var title = $(texts.shift()).text();
+
+              this.add({
+                title: title,
+                encodedTitle: encodeURIComponent(title),
                 id: id,
-                body: el.caption,
+                body: texts.join('\n'),
                 date: el.date,
                 displayDate: this.prettyDate(el.date),
                 photo: photo,
                 thumbnail: thumbnail
-              }) );
+              });
             }, this) ); //END each
 
             cb();
