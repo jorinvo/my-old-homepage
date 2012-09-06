@@ -29,6 +29,7 @@ define([
         }, this)
         .on('deactivate', this.stopTimer, this);
 
+      var timeout;
       this.projects
         .on('move', function(current) {
           var left = (current * -652) + 'px';
@@ -37,7 +38,8 @@ define([
             .find('.work-text')
             .addClass('hide')
             .eq(current);
-          setTimeout(function() {
+          clearTimeout(timeout);
+          timeout = setTimeout(function() {
             $cur.doAnimation('inPop');
           }, 1000);
         }, this)
