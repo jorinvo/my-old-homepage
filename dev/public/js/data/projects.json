@@ -19,5 +19,19 @@
     "img": "stuggi-tv.jpg",
     "teaser": "STUGGI.TV",
     "desc": "Wordpress-installation for a small media startup in Stuttgart"
+  },
+  {
+    "id": 3,
+    "url": "http://christof-esswein.de/",
+    "img": "esswein.jpg",
+    "teaser": "christof-esswein.de - portfolio of an arranger",
+    "desc": false
+  },
+  {
+    "id": 2,
+    "url": "http://ada-metals.de/",
+    "img": "ada-metals.jpg",
+    "teaser": "ADA Trading - Industry Goods Trade",
+    "desc": false
   }
 ]
