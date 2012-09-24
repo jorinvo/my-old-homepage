@@ -1,16 +1,17 @@
 {
 
-    baseUrl: "../prod/public/js",
+    appDir: "../dev/public/js",
 
-    mainConfigFile: "../prod/public/js/main.js",
+    baseUrl: ".",
+
+    mainConfigFile: "../dev/public/js/main.js",
 
     dir: "../prod/public/js",
 
     paths: {
         text: "libs/require/text",
-        order: "libs/require/order",
         jquery: "empty:",
-        modernizr: "libs/modernizr-2.5.3",
+        modernizr: "libs/modernizr",
         underscore: "libs/underscore.min",
         backbone: "libs/backbone.min",
         hogan: "libs/hogan.min"
@@ -40,8 +41,7 @@
         {
             name: "main",
             include: [
-                "hogan",
-                "text"
+                "hogan"
             ]
         },
         {
@@ -117,13 +117,7 @@
             }
         },
         {
-            name: "utils/doAnimation_new",
-            overwrite: {
-                dir: "../prod/public/js/utils"
-            }
-        },
-        {
-            name: "utils/doAnimation_old",
+            name: "utils/doAnimation",
             overwrite: {
                 dir: "../prod/public/js/utils"
             }
