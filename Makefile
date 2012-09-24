@@ -6,7 +6,8 @@ debug:
 
 MSG = magic stuff happened
 
-deploy:
+
+build:
 
 	#compile .less files
 	node utils/less.js
@@ -20,6 +21,8 @@ deploy:
 	#optimize js
 	dev/node_modules/requirejs/bin/r.js -o utils/build.js
 
+
+deploy: build
 
 	# push to github
 	git add .
