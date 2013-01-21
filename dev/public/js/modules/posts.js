@@ -21,7 +21,7 @@ define([
     fetch: function(req, cb) {
 
       $.getJSON(
-        'http://api.tumblr.com/v2/blog/jorinvogel.tumblr.com/'
+        'http://api.tumblr.com/v2/blog/jorinoldpage.tumblr.com/'
         + 'posts?api_key=hEEn5blpQrSOx5XGgJp6L1vbsQUpM7aAIxvHmpdoxkDYQoI2q4'
         + '&type=photo'
         + ( req.id? '&id=' + req.id : '' )
